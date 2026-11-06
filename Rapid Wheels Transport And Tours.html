@@ -1,0 +1,440 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Rapid Wheels Transport And Tours</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* Layout: sticky colour-block header with tab bar, one panel visible at a time, speed-stripe motif running through hero and section heads. */
+:root{
+  --bg:#fffaf0; --surface:#ffffff; --fg:#14231a; --muted:#53655a; --line:#e6dcc3;
+  --green:#0b7a3b; --green-deep:#064d26; --gold:#ffc82e; --coral:#ff5a3c; --sea:#0ea5b7;
+  --on-green:#ffffff; --on-gold:#14231a; --tint-green:#e3f4e8; --tint-gold:#fff1c2; --tint-sea:#d9f3f6; --tint-coral:#ffe3dc;
+  --display:"Bricolage Grotesque","Arial Black",system-ui,sans-serif; --body:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0c1710; --surface:#14241a; --fg:#f4f0e2; --muted:#a9bcaf; --line:#27402f;
+  --green:#2fbf6a; --green-deep:#0a3a1e; --gold:#ffc82e; --coral:#ff7a5f; --sea:#38c6d6;
+  --on-green:#06210f; --on-gold:#14231a; --tint-green:#173323; --tint-gold:#33300f; --tint-sea:#10333a; --tint-coral:#3a1f19; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0c1710; --surface:#14241a; --fg:#f4f0e2; --muted:#a9bcaf; --line:#27402f;
+  --green:#2fbf6a; --green-deep:#0a3a1e; --gold:#ffc82e; --coral:#ff7a5f; --sea:#38c6d6;
+  --on-green:#06210f; --on-gold:#14231a; --tint-green:#173323; --tint-gold:#33300f; --tint-sea:#10333a; --tint-coral:#3a1f19; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.6;padding-inline:0}
+h1,h2,h3{font-family:var(--display);line-height:1.05;margin:0;text-wrap:balance;letter-spacing:-.01em}
+p{margin:0}
+a{color:inherit}
+.wrap{max-width:1080px;margin-inline:auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--green-deep)}
+
+/* header */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--green-deep);color:#fff;border-bottom:5px solid var(--gold)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:10px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;min-width:0}
+.logo{flex:none;width:44px;height:44px;border-radius:50%;background:var(--gold);display:grid;place-items:center}
+.brand b{font-family:var(--display);font-size:1.15rem;line-height:1;display:block}
+.brand small{display:block;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-top:3px}
+.themebtn{flex:none;border:2px solid rgba(255,255,255,.4);background:transparent;color:#fff;border-radius:999px;padding:6px 12px;font:inherit;font-size:.85rem;cursor:pointer}
+.tabs{display:flex;gap:6px;overflow-x:auto;padding-bottom:10px;scrollbar-width:thin}
+.tab{flex:none;border:0;border-radius:999px;padding:8px 16px;font:inherit;font-weight:700;font-size:.95rem;cursor:pointer;background:rgba(255,255,255,.12);color:#fff;text-decoration:none}
+.tab:hover{background:rgba(255,255,255,.24)}
+.tab[aria-current="page"]{background:var(--gold);color:var(--on-gold)}
+.tab.cta{background:var(--coral);color:#fff}
+.tab.cta[aria-current="page"]{background:var(--gold);color:var(--on-gold)}
+:focus-visible{outline:3px solid var(--sea);outline-offset:2px}
+
+/* hero */
+.hero{background:var(--green);color:var(--on-green);position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:32px;align-items:center;padding-block:56px}
+.hero h1{font-size:clamp(2.4rem,7vw,4.6rem);font-weight:800}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.hero p.lead{margin-top:16px;font-size:1.12rem;max-width:34em}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.btn{display:inline-block;border:0;border-radius:12px;padding:13px 22px;font:inherit;font-weight:700;cursor:pointer;text-decoration:none;background:var(--gold);color:var(--on-gold)}
+.btn.coral{background:var(--coral);color:#fff}
+.btn.ghost{background:transparent;color:inherit;border:2px solid currentColor}
+.btn:hover{filter:brightness(1.06)}
+.stripes{position:absolute;right:-40px;top:0;bottom:0;width:46%;display:flex;gap:14px;transform:skewX(-14deg);opacity:.9;pointer-events:none}
+.stripes i{flex:1;background:var(--gold)}
+.stripes i:nth-child(2){background:var(--coral)}
+.stripes i:nth-child(3){background:var(--sea)}
+.stripes i:nth-child(4){background:#000;opacity:.35}
+.hero .wrap>*{position:relative;z-index:1}
+.heroCard{background:var(--surface);color:var(--fg);border-radius:20px;padding:22px;box-shadow:0 12px 30px rgba(0,0,0,.25)}
+.heroCard h3{font-size:1.3rem;margin-bottom:12px}
+.heroCard ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.heroCard li{display:flex;gap:10px;align-items:flex-start}
+.dot{flex:none;width:12px;height:12px;border-radius:50%;margin-top:7px;background:var(--green)}
+.heroCard li:nth-child(2) .dot{background:var(--coral)}
+.heroCard li:nth-child(3) .dot{background:var(--sea)}
+.heroCard li:nth-child(4) .dot{background:var(--gold)}
+
+/* sections */
+main{padding-block:44px 64px}
+.head{margin-bottom:28px}
+.head h2{font-size:clamp(1.9rem,4.6vw,2.9rem);font-weight:800}
+.head p{color:var(--muted);margin-top:10px;max-width:40em}
+.head::after{content:"";display:block;margin-top:14px;width:120px;height:8px;border-radius:4px;background:linear-gradient(90deg,var(--green) 0 33%,var(--gold) 33% 66%,var(--coral) 66%)}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr))}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px;min-width:0}
+.card h3{font-size:1.25rem;margin-bottom:8px}
+.card p{color:var(--muted)}
+.tag{display:inline-block;font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:999px;margin-bottom:12px}
+.c1 .tag{background:var(--tint-green);color:var(--green)}
+.c2 .tag{background:var(--tint-gold);color:var(--fg)}
+.c3 .tag{background:var(--tint-sea);color:var(--fg)}
+.c4 .tag{background:var(--tint-coral);color:var(--fg)}
+.banner{border-radius:20px;padding:28px;margin-top:28px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;background:var(--gold);color:var(--on-gold)}
+.banner h3{font-size:1.5rem}
+.banner .btn{background:var(--green-deep);color:#fff}
+.two{display:grid;gap:28px;grid-template-columns:1fr 1fr;align-items:start}
+.facts{display:grid;gap:12px}
+.fact{border-radius:16px;padding:16px 18px;display:flex;justify-content:space-between;gap:12px;align-items:baseline}
+.fact b{font-family:var(--display);font-size:1.5rem}
+.fact:nth-child(1){background:var(--tint-green)}.fact:nth-child(2){background:var(--tint-gold)}.fact:nth-child(3){background:var(--tint-sea)}.fact:nth-child(4){background:var(--tint-coral)}
+.tour{display:flex;flex-direction:column;gap:6px;padding:0;overflow:hidden}
+.tour .top{padding:18px 22px;color:#fff;font-family:var(--display);font-size:1.35rem;font-weight:800;line-height:1.1}
+.tour:nth-child(4n+1) .top{background:var(--green)}
+.tour:nth-child(4n+2) .top{background:var(--sea);color:#06222a}
+.tour:nth-child(4n+3) .top{background:var(--coral)}
+.tour:nth-child(4n+4) .top{background:var(--gold);color:var(--on-gold)}
+.tour .body{padding:0 22px 22px;display:grid;gap:8px}
+.meta{display:flex;flex-wrap:wrap;gap:6px}
+.meta span{font-size:.8rem;border:1px solid var(--line);border-radius:999px;padding:2px 10px;color:var(--muted)}
+.fleet svg{width:100%;height:auto;max-height:90px;display:block;margin-bottom:10px}
+.cap{font-family:var(--display);font-weight:800;font-size:1.05rem}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:16px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:560px}
+th,td{text-align:left;padding:14px 18px;border-bottom:1px solid var(--line)}
+th{background:var(--green);color:var(--on-green);font-family:var(--display);font-size:1rem}
+tbody tr:nth-child(even){background:var(--tint-green)}
+tbody tr:last-child td{border-bottom:0}
+td.num{font-variant-numeric:tabular-nums;font-weight:700}
+.note{margin-top:14px;font-size:.9rem;color:var(--muted);background:var(--tint-gold);border-radius:12px;padding:12px 16px;color:var(--fg)}
+details{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 18px}
+details+details{margin-top:10px}
+summary{cursor:pointer;font-weight:700}
+details p{margin-top:8px;color:var(--muted)}
+form{display:grid;gap:14px;grid-template-columns:1fr 1fr}
+.f{display:grid;gap:5px;min-width:0}
+.f.full{grid-column:1/-1}
+label{font-weight:700;font-size:.9rem}
+input,select,textarea{font:inherit;color:var(--fg);background:var(--bg);border:2px solid var(--line);border-radius:10px;padding:10px 12px;width:100%;min-width:0}
+input:focus,select:focus,textarea:focus{border-color:var(--green)}
+.out{margin-top:18px;display:none;gap:10px}
+.out.show{display:grid}
+.out pre{white-space:pre-wrap;word-break:break-word;margin:0;font:inherit;background:var(--tint-green);border-radius:14px;padding:16px}
+.contact .card h3{display:flex;align-items:center;gap:8px}
+.ph{display:inline-block;background:var(--tint-coral);border-radius:8px;padding:2px 8px;font-weight:700}
+footer{background:var(--green-deep);color:#fff;border-top:5px solid var(--gold);padding-block:28px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
+footer small{color:#cfe3d5}
+[role="tabpanel"]{animation:in .25s ease}
+@keyframes in{from{opacity:.4;transform:translateY(6px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){[role="tabpanel"]{animation:none}}
+@media (max-width:760px){
+  .hero .wrap,.two{grid-template-columns:1fr}
+  .stripes{width:70%;opacity:.35}
+  form{grid-template-columns:1fr}
+  .hero .wrap{padding-block:36px}
+}
+</style>
+
+<header>
+  <div class="wrap">
+    <div class="bar">
+      <a class="brand" href="#home">
+        <span class="logo" aria-hidden="true">
+          <svg width="30" height="30" viewBox="0 0 30 30"><circle cx="15" cy="15" r="12" fill="#064d26"/><circle cx="15" cy="15" r="4" fill="#ffc82e"/><path d="M15 3v8M15 19v8M3 15h8M19 15h8M6.5 6.5l5.6 5.6M17.9 17.9l5.6 5.6M23.5 6.5l-5.6 5.6M12.1 17.9l-5.6 5.6" stroke="#ffc82e" stroke-width="1.6"/></svg>
+        </span>
+        <span><b>Rapid Wheels</b><small>Transport &amp; Tours</small></span>
+      </a>
+      <button class="themebtn" id="themeBtn" type="button" aria-label="Switch between light and dark">Light / Dark</button>
+    </div>
+    <nav class="tabs" id="tabs" aria-label="Site sections" role="tablist">
+      <a class="tab" role="tab" href="#home" data-tab="home">Home</a>
+      <a class="tab" role="tab" href="#about" data-tab="about">About</a>
+      <a class="tab" role="tab" href="#services" data-tab="services">Services</a>
+      <a class="tab" role="tab" href="#tours" data-tab="tours">Tours</a>
+      <a class="tab" role="tab" href="#fleet" data-tab="fleet">Fleet</a>
+      <a class="tab" role="tab" href="#rates" data-tab="rates">Rates</a>
+      <a class="tab" role="tab" href="#faq" data-tab="faq">FAQ</a>
+      <a class="tab" role="tab" href="#contact" data-tab="contact">Contact</a>
+      <a class="tab cta" role="tab" href="#book" data-tab="book">Book Now</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HOME -->
+<section id="home" role="tabpanel" hidden>
+  <div class="hero">
+    <div class="stripes" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+    <div class="wrap">
+      <div>
+        <h1>Get there <em>rapid.</em><br>See Jamaica properly.</h1>
+        <p class="lead">Airport transfers, island tours and private charters across Jamaica. Clean vehicles, drivers who know every road, and a pickup that is on time.</p>
+        <div class="btns">
+          <a class="btn" href="#book">Book a ride</a>
+          <a class="btn ghost" href="#tours">Explore tours</a>
+        </div>
+      </div>
+      <div class="heroCard">
+        <h3>What we do best</h3>
+        <ul>
+          <li><span class="dot"></span><span><b>Airport transfers</b><br>Norman Manley (Kingston) and Sangster (Montego Bay).</span></li>
+          <li><span class="dot"></span><span><b>Island tours</b><br>Waterfalls, mountains, beaches and city history.</span></li>
+          <li><span class="dot"></span><span><b>Private charters</b><br>Weddings, groups, corporate and school trips.</span></li>
+          <li><span class="dot"></span><span><b>Door to door</b><br>Hotel, villa or office pickup and drop-off.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="wrap">
+    <main>
+      <div class="head"><h2>Why ride with Rapid Wheels</h2></div>
+      <div class="grid">
+        <div class="card c1"><span class="tag">On time</span><h3>We watch your flight</h3><p>We track arrivals so your driver is waiting when you walk out, even when the plane is late.</p></div>
+        <div class="card c2"><span class="tag">Local</span><h3>Drivers who know the road</h3><p>From Kingston traffic to the Junction Road bends, our drivers know the best route for the day.</p></div>
+        <div class="card c3"><span class="tag">Comfort</span><h3>Cool, clean vehicles</h3><p>Air-conditioned cars, vans and coaches, cleaned before every trip.</p></div>
+        <div class="card c4"><span class="tag">Clear pricing</span><h3>Know the cost first</h3><p>You get the price before you book. No surprises at the end of the ride.</p></div>
+      </div>
+      <div class="banner">
+        <div><h3>Heading somewhere soon?</h3><p>Tell us where and when. We will send you a quote.</p></div>
+        <a class="btn" href="#book">Get a quote</a>
+      </div>
+    </main>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" role="tabpanel" hidden>
+  <div class="wrap"><main>
+    <div class="head"><h2>About Rapid Wheels</h2><p>A Jamaican transport and tour company built around one idea: you should never worry about how you are getting there.</p></div>
+    <div class="two">
+      <div>
+        <p>Rapid Wheels Transport And Tours moves visitors, families, teams and groups across the island. We began with airport pickups and grew into full-day tours and private charters because our customers kept asking for more.</p>
+        <p style="margin-top:14px">Every trip is planned around you. Tell us how many people are travelling, where you are staying and what you want to see, and we match the right vehicle and driver.</p>
+        <p style="margin-top:14px">We care about safe driving, honest prices and being easy to reach. When plans change, you can message us and we adjust.</p>
+        <div class="btns"><a class="btn coral" href="#book">Plan your trip</a><a class="btn" href="#contact">Talk to us</a></div>
+      </div>
+      <div class="facts">
+        <div class="fact"><span>Island-wide service</span><b>14 parishes</b></div>
+        <div class="fact"><span>Airports covered</span><b>2</b></div>
+        <div class="fact"><span>Vehicles from</span><b>4 to 25 seats</b></div>
+        <div class="fact"><span>Booking support</span><b>7 days a week</b></div>
+      </div>
+    </div>
+    <div class="head" style="margin-top:44px"><h2>What we stand for</h2></div>
+    <div class="grid">
+      <div class="card c1"><span class="tag">Safety</span><h3>Careful on every road</h3><p>Regular vehicle checks and drivers who put safety ahead of speed.</p></div>
+      <div class="card c2"><span class="tag">Honesty</span><h3>Fair, upfront prices</h3><p>The quote you accept is the price you pay.</p></div>
+      <div class="card c3"><span class="tag">Welcome</span><h3>Jamaican hospitality</h3><p>A warm greeting, cold water on board and help with your bags.</p></div>
+    </div>
+  </main></div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" role="tabpanel" hidden>
+  <div class="wrap"><main>
+    <div class="head"><h2>Our services</h2><p>Pick what you need. We can combine them into one smooth itinerary.</p></div>
+    <div class="grid">
+      <div class="card c1"><span class="tag">Arrivals &amp; departures</span><h3>Airport transfers</h3><p>Meet and greet at Norman Manley International (Kingston) or Sangster International (Montego Bay), with a direct ride to your hotel, villa or home.</p></div>
+      <div class="card c2"><span class="tag">Day trips</span><h3>Guided island tours</h3><p>Full-day and half-day tours with a driver who can also share the stories behind each stop.</p></div>
+      <div class="card c3"><span class="tag">Hourly or daily</span><h3>Private charters</h3><p>Hire a vehicle and driver for errands, meetings, shopping or a night out.</p></div>
+      <div class="card c4"><span class="tag">Groups</span><h3>Weddings &amp; events</h3><p>Move guests between ceremony, reception and hotel with coaches and vans on a fixed schedule.</p></div>
+      <div class="card c1"><span class="tag">Business</span><h3>Corporate transport</h3><p>Staff shuttles, visiting guests and conference runs, with invoicing available.</p></div>
+      <div class="card c2"><span class="tag">Education</span><h3>School &amp; church trips</h3><p>Safe, supervised group transport for outings and excursions.</p></div>
+      <div class="card c3"><span class="tag">Between towns</span><h3>Long-distance rides</h3><p>Comfortable one-way or return rides between Kingston, Ocho Rios, Montego Bay, Negril and beyond.</p></div>
+      <div class="card c4"><span class="tag">Extras</span><h3>Add-ons</h3><p>Child seats, grocery stops, wait time and cooler with drinks, arranged when you book.</p></div>
+    </div>
+  </main></div>
+</section>
+
+<!-- TOURS -->
+<section id="tours" role="tabpanel" hidden>
+  <div class="wrap"><main>
+    <div class="head"><h2>Island tours</h2><p>Our most requested days out. Each one can be adjusted to your pace and your group.</p></div>
+    <div class="grid">
+      <article class="card tour"><div class="top">Dunn's River Falls &amp; Ocho Rios</div><div class="body"><p>Climb the famous terraced falls, then explore the north coast town.</p><div class="meta"><span>Full day</span><span>Waterfalls</span><span>North coast</span></div></div></article>
+      <article class="card tour"><div class="top">Blue Mountain Coffee Trail</div><div class="body"><p>Wind up into the cool hills above Kingston for views and fresh coffee.</p><div class="meta"><span>Full day</span><span>Mountains</span><span>Coffee</span></div></div></article>
+      <article class="card tour"><div class="top">Kingston Culture &amp; Music</div><div class="body"><p>Bob Marley Museum, Devon House and the sounds and food of the capital.</p><div class="meta"><span>Half day</span><span>History</span><span>Music</span></div></div></article>
+      <article class="card tour"><div class="top">Negril &amp; Seven Mile Beach</div><div class="body"><p>Sand, sea and sunset at the cliffs, with time to swim.</p><div class="meta"><span>Full day</span><span>Beach</span><span>Sunset</span></div></div></article>
+      <article class="card tour"><div class="top">Port Royal &amp; Lime Cay</div><div class="body"><p>The old pirate port and a short boat ride to a postcard sandbar.</p><div class="meta"><span>Half day</span><span>History</span><span>Island</span></div></div></article>
+      <article class="card tour"><div class="top">Blue Lagoon &amp; Portland</div><div class="body"><p>Swim in clear water, then taste jerk and local fruit on the roadside.</p><div class="meta"><span>Full day</span><span>Swimming</span><span>Food</span></div></div></article>
+      <article class="card tour"><div class="top">YS Falls &amp; Black River</div><div class="body"><p>Rope swings, cool pools and a river safari in the south.</p><div class="meta"><span>Full day</span><span>Nature</span><span>South coast</span></div></div></article>
+      <article class="card tour"><div class="top">Custom tour</div><div class="body"><p>Tell us what you want to see and we will build the day around it.</p><div class="meta"><span>Any length</span><span>Your choice</span></div></div></article>
+    </div>
+    <div class="banner"><div><h3>Found one you like?</h3><p>Send us the tour name and your date.</p></div><a class="btn" href="#book">Book a tour</a></div>
+  </main></div>
+</section>
+
+<!-- FLEET -->
+<section id="fleet" role="tabpanel" hidden>
+  <div class="wrap"><main>
+    <div class="head"><h2>Our fleet</h2><p>The right size for every trip, from a couple on holiday to a full wedding party.</p></div>
+    <div class="grid fleet">
+      <div class="card c1">
+        <svg viewBox="0 0 160 60" aria-hidden="true"><path d="M10 40l10-16c3-5 8-8 14-8h60c7 0 13 3 17 8l12 14c4 1 7 4 7 8v2H10z" fill="var(--green)"/><path d="M34 20h26v14H26zM66 20h24c3 0 6 2 8 5l5 9H66z" fill="var(--tint-sea)"/><circle cx="44" cy="48" r="9" fill="var(--fg)"/><circle cx="116" cy="48" r="9" fill="var(--fg)"/><circle cx="44" cy="48" r="4" fill="var(--gold)"/><circle cx="116" cy="48" r="4" fill="var(--gold)"/></svg>
+        <span class="tag">Sedan</span><h3>Comfort Car</h3><p class="cap">Up to 4 passengers</p><p>Airport runs, couples and business travel. Room for 2 large bags.</p>
+      </div>
+      <div class="card c2">
+        <svg viewBox="0 0 160 60" aria-hidden="true"><path d="M8 42V26c0-5 3-9 8-10h66c6 0 11 3 14 8l12 14c6 1 10 5 10 9v3H8z" fill="var(--gold)"/><path d="M22 22h20v14H22zM46 22h20v14H46zM70 22h18c3 0 5 2 7 5l4 9H70z" fill="var(--tint-sea)"/><circle cx="40" cy="49" r="9" fill="var(--fg)"/><circle cx="120" cy="49" r="9" fill="var(--fg)"/><circle cx="40" cy="49" r="4" fill="var(--coral)"/><circle cx="120" cy="49" r="4" fill="var(--coral)"/></svg>
+        <span class="tag">SUV / Mini van</span><h3>Family Cruiser</h3><p class="cap">Up to 8 passengers</p><p>Families and small groups with plenty of luggage space.</p>
+      </div>
+      <div class="card c3">
+        <svg viewBox="0 0 160 60" aria-hidden="true"><rect x="6" y="10" width="148" height="38" rx="8" fill="var(--sea)"/><g fill="var(--tint-sea)"><rect x="14" y="17" width="20" height="14" rx="2"/><rect x="38" y="17" width="20" height="14" rx="2"/><rect x="62" y="17" width="20" height="14" rx="2"/><rect x="86" y="17" width="20" height="14" rx="2"/><rect x="110" y="17" width="34" height="14" rx="2"/></g><circle cx="38" cy="50" r="8" fill="var(--fg)"/><circle cx="122" cy="50" r="8" fill="var(--fg)"/><circle cx="38" cy="50" r="3.5" fill="var(--gold)"/><circle cx="122" cy="50" r="3.5" fill="var(--gold)"/></svg>
+        <span class="tag">Mini coach</span><h3>Group Express</h3><p class="cap">Up to 15 passengers</p><p>Tours, church and school groups, wedding parties.</p>
+      </div>
+      <div class="card c4">
+        <svg viewBox="0 0 160 60" aria-hidden="true"><rect x="4" y="8" width="152" height="40" rx="8" fill="var(--coral)"/><g fill="var(--tint-coral)"><rect x="12" y="15" width="16" height="14" rx="2"/><rect x="32" y="15" width="16" height="14" rx="2"/><rect x="52" y="15" width="16" height="14" rx="2"/><rect x="72" y="15" width="16" height="14" rx="2"/><rect x="92" y="15" width="16" height="14" rx="2"/><rect x="112" y="15" width="16" height="14" rx="2"/><rect x="132" y="15" width="16" height="14" rx="2"/></g><circle cx="34" cy="50" r="8" fill="var(--fg)"/><circle cx="126" cy="50" r="8" fill="var(--fg)"/><circle cx="34" cy="50" r="3.5" fill="var(--gold)"/><circle cx="126" cy="50" r="3.5" fill="var(--gold)"/></svg>
+        <span class="tag">Coach</span><h3>Big Wheel Coach</h3><p class="cap">Up to 25 passengers</p><p>Large events, corporate shuttles and island-wide group trips.</p>
+      </div>
+    </div>
+    <p class="note">Every vehicle is air-conditioned and cleaned before each trip. Child seats can be added when you book.</p>
+  </main></div>
+</section>
+
+<!-- RATES -->
+<section id="rates" role="tabpanel" hidden>
+  <div class="wrap"><main>
+    <div class="head"><h2>Rates</h2><p>Starting prices for popular trips. The final price depends on pickup point, time of day and number of stops.</p></div>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Trip</th><th>Comfort Car (4)</th><th>Family Cruiser (8)</th><th>Group Express (15)</th></tr></thead>
+        <tbody>
+          <tr><td>Norman Manley Airport to New Kingston</td><td class="num">US$ 35</td><td class="num">US$ 50</td><td class="num">US$ 85</td></tr>
+          <tr><td>Norman Manley Airport to Ocho Rios</td><td class="num">US$ 110</td><td class="num">US$ 150</td><td class="num">US$ 230</td></tr>
+          <tr><td>Sangster Airport to Negril</td><td class="num">US$ 75</td><td class="num">US$ 100</td><td class="num">US$ 160</td></tr>
+          <tr><td>Sangster Airport to Ocho Rios</td><td class="num">US$ 120</td><td class="num">US$ 160</td><td class="num">US$ 250</td></tr>
+          <tr><td>Kingston half-day tour (up to 5 hrs)</td><td class="num">US$ 120</td><td class="num">US$ 170</td><td class="num">US$ 260</td></tr>
+          <tr><td>Full-day island tour (up to 10 hrs)</td><td class="num">US$ 200</td><td class="num">US$ 280</td><td class="num">US$ 420</td></tr>
+          <tr><td>Hourly charter (minimum 3 hrs)</td><td class="num">US$ 30 / hr</td><td class="num">US$ 40 / hr</td><td class="num">US$ 60 / hr</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note"><b>Sample rates.</b> These figures are placeholders for the owner to replace with Rapid Wheels' real prices before the site goes live. Prices per vehicle, not per person.</p>
+    <div class="banner"><div><h3>Need an exact quote?</h3><p>Send your route and date and we will confirm the price.</p></div><a class="btn" href="#book">Request a quote</a></div>
+  </main></div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" role="tabpanel" hidden>
+  <div class="wrap"><main>
+    <div class="head"><h2>Questions we hear a lot</h2></div>
+    <details open><summary>How far ahead should I book?</summary><p>As early as you can. For airport pickups and weekend or holiday tours, a few days ahead is best. We try to help with short notice too.</p></details>
+    <details><summary>What if my flight is delayed?</summary><p>Share your flight number when you book. We track arrivals and adjust the pickup time with no extra charge for normal delays.</p></details>
+    <details><summary>Can the driver wait while we visit a place?</summary><p>Yes. Tours include wait time at each stop. For charters, wait time is part of the hourly rate.</p></details>
+    <details><summary>Do you carry child seats?</summary><p>Yes, please ask when you book so we have the right size ready.</p></details>
+    <details><summary>Which areas do you cover?</summary><p>All parishes, with regular runs between Kingston, Ocho Rios, Montego Bay, Negril, Portland and the south coast.</p></details>
+    <details><summary>How do I pay?</summary><p>We confirm payment options when we send your quote.</p></details>
+    <details><summary>What if I need to cancel or change my trip?</summary><p>Message us as soon as plans change. The earlier you tell us, the easier it is to move your booking.</p></details>
+  </main></div>
+</section>
+
+<!-- BOOK -->
+<section id="book" role="tabpanel" hidden>
+  <div class="wrap"><main>
+    <div class="head"><h2>Book your ride</h2><p>Fill in your trip details. We will build a booking message you can copy and send to us.</p></div>
+    <form id="bookForm" novalidate>
+      <div class="f"><label for="name">Your name</label><input id="name" name="name" autocomplete="name" required></div>
+      <div class="f"><label for="contactInfo">Phone or email</label><input id="contactInfo" name="contactInfo" required></div>
+      <div class="f"><label for="service">Service</label>
+        <select id="service"><option>Airport transfer</option><option>Island tour</option><option>Private charter</option><option>Wedding or event</option><option>Corporate transport</option><option>Long-distance ride</option></select></div>
+      <div class="f"><label for="vehicle">Vehicle</label>
+        <select id="vehicle"><option>Comfort Car (up to 4)</option><option>Family Cruiser (up to 8)</option><option>Group Express (up to 15)</option><option>Big Wheel Coach (up to 25)</option></select></div>
+      <div class="f"><label for="date">Date</label><input id="date" type="date"></div>
+      <div class="f"><label for="time">Pickup time</label><input id="time" type="time"></div>
+      <div class="f"><label for="pickup">Pickup location</label><input id="pickup" placeholder="Hotel, address or airport"></div>
+      <div class="f"><label for="dropoff">Drop-off or tour</label><input id="dropoff" placeholder="Where to, or which tour"></div>
+      <div class="f"><label for="pax">Passengers</label><input id="pax" type="number" min="1" max="25" value="2"></div>
+      <div class="f"><label for="flight">Flight number (if airport)</label><input id="flight"></div>
+      <div class="f full"><label for="notes">Notes</label><textarea id="notes" rows="3" placeholder="Child seats, extra stops, luggage…"></textarea></div>
+      <div class="f full"><button class="btn coral" type="submit">Create booking message</button></div>
+    </form>
+    <div class="out" id="out" aria-live="polite">
+      <h3>Your booking message</h3>
+      <pre id="msg"></pre>
+      <div class="btns" style="margin:0"><button class="btn" id="copyBtn" type="button">Copy message</button></div>
+      <p class="note" id="copyNote">Copy this message and send it to Rapid Wheels using the phone number or email on the Contact tab. Nothing has been sent yet.</p>
+    </div>
+  </main></div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" role="tabpanel" hidden>
+  <div class="wrap contact"><main>
+    <div class="head"><h2>Contact Rapid Wheels</h2><p>Reach us to book, ask a question or change a trip.</p></div>
+    <div class="grid">
+      <div class="card c1"><span class="tag">Call or WhatsApp</span><h3>Phone</h3><p><span class="ph">Add phone number</span></p></div>
+      <div class="card c2"><span class="tag">Email</span><h3>Write to us</h3><p><span class="ph">Add email address</span></p></div>
+      <div class="card c3"><span class="tag">Base</span><h3>Where we operate</h3><p>Kingston, Jamaica, serving the whole island.</p></div>
+      <div class="card c4"><span class="tag">Hours</span><h3>When we answer</h3><p><span class="ph">Add opening hours</span></p></div>
+    </div>
+    <p class="note">The highlighted fields are placeholders. Replace them with the real contact details before sharing the site.</p>
+    <div class="banner"><div><h3>Ready to go?</h3><p>Start with the booking form and we will do the rest.</p></div><a class="btn" href="#book">Book now</a></div>
+  </main></div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div><b style="font-family:var(--display);font-size:1.15rem">Rapid Wheels Transport And Tours</b><br><small>Kingston, Jamaica · Island-wide service</small></div>
+    <small>Airport transfers · Tours · Charters</small>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var names=["home","about","services","tours","fleet","rates","faq","book","contact"];
+  var panels=names.map(function(n){return document.getElementById(n)});
+  var tabs=document.querySelectorAll(".tab");
+  function show(){
+    var h=(location.hash||"").replace("#","");
+    if(names.indexOf(h)<0)h="home";
+    panels.forEach(function(p){p.hidden=p.id!==h});
+    tabs.forEach(function(t){
+      if(t.dataset.tab===h){t.setAttribute("aria-current","page");t.setAttribute("aria-selected","true");try{t.scrollIntoView({inline:"center",block:"nearest"})}catch(e){}}
+      else{t.removeAttribute("aria-current");t.setAttribute("aria-selected","false")}
+    });
+    window.scrollTo(0,0);
+  }
+  window.addEventListener("hashchange",show);show();
+
+  var root=document.documentElement;
+  document.getElementById("themeBtn").addEventListener("click",function(){
+    var dark=root.getAttribute("data-theme")==="dark"||(!root.getAttribute("data-theme")&&matchMedia("(prefers-color-scheme: dark)").matches);
+    root.setAttribute("data-theme",dark?"light":"dark");
+  });
+
+  var form=document.getElementById("bookForm"),out=document.getElementById("out"),msg=document.getElementById("msg");
+  function v(id){return document.getElementById(id).value.trim()}
+  form.addEventListener("submit",function(e){
+    e.preventDefault();
+    if(!v("name")||!v("contactInfo")){
+      (v("name")?document.getElementById("contactInfo"):document.getElementById("name")).focus();
+      msg.textContent="Please add your name and a phone number or email so we can reply.";
+      out.classList.add("show");return;
+    }
+    var lines=["Hello Rapid Wheels, I would like to book:",
+      "Name: "+v("name"),"Contact: "+v("contactInfo"),
+      "Service: "+document.getElementById("service").value,
+      "Vehicle: "+document.getElementById("vehicle").value,
+      "Date: "+(v("date")||"to be confirmed"),"Pickup time: "+(v("time")||"to be confirmed"),
+      "Pickup: "+(v("pickup")||"to be confirmed"),"Drop-off or tour: "+(v("dropoff")||"to be confirmed"),
+      "Passengers: "+(v("pax")||"1")];
+    if(v("flight"))lines.push("Flight: "+v("flight"));
+    if(v("notes"))lines.push("Notes: "+v("notes"));
+    lines.push("Please send me a quote. Thank you.");
+    msg.textContent=lines.join("\n");
+    out.classList.add("show");
+    out.scrollIntoView({behavior:"smooth",block:"nearest"});
+  });
+  document.getElementById("copyBtn").addEventListener("click",function(){
+    var note=document.getElementById("copyNote");
+    function sel(){var r=document.createRange();r.selectNodeContents(msg);var s=getSelection();s.removeAllRanges();s.addRange(r);note.textContent="Select and copy the message above, then send it to Rapid Wheels."}
+    try{navigator.clipboard.writeText(msg.textContent).then(function(){note.textContent="Copied. Now send it to Rapid Wheels using the Contact tab. Nothing has been sent yet."},sel)}catch(e){sel()}
+  });
+})();
+</script>
+
+</body></html>
