@@ -52,3 +52,4 @@ Book your ride or tour today and experience Montego Bay the Rapid Wheels way!
 
 
                                    
+Email Us: rapidwheelstransport01@gmail.com
