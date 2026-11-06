@@ -23,3 +23,19 @@ All Packages fit based on your dates,groups size and budget
 04: Fair, transparent pricing
 
 05: Personalized trips tailored to your schedule and interests
+
+
+
+                                        What We Offer
+
+
+. Airport Transfers: Prompt pickups and drop-offs at Sangster International Airport, with a friendly driver waiting when you arrive.
+
+
+. Private Transportation: Door-to-door service to hotels, resorts, villas, and destinations across Jamaica.
+
+
+. Guided Tours: Discover Jamaica’s top spots, from Dunn’s River Falls and Rose Hall to Negril’s beaches, Martha Brae River rafting, and more.
+
+
+. Group and Event Travel: Comfortable vehicles for families, wedding parties, corporate groups, and special occasions.                                        
