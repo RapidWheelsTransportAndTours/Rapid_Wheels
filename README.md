@@ -43,3 +43,12 @@ All Packages fit based on your dates,groups size and budget
 At Rapid Wheels, we treat every passenger like family. Sit back, relax, and let us show you the beauty and warmth of Jamaica.
 
 Book your ride or tour today and experience Montego Bay the Rapid Wheels way!
+
+
+
+                                                           Get in touch
+
+                                   Let's plan your trip.
+
+
+                                   
