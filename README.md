@@ -26,7 +26,7 @@ All Packages fit based on your dates,groups size and budget
 
 
 
-                                            **_What We Offer_**
+                                            What We Offer
 
 
 . Airport Transfers: Prompt pickups and drop-offs at Sangster International Airport, with a friendly driver waiting when you arrive.
