@@ -1,1 +1,487 @@
+@@ -0,0 +1,486 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Rapid Wheels Transport And Tours</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=DM+Sans:wght@400;500;700&display=swap">
+<style>
+/* Layout concept: sticky tab bar over a bright tropical page. Hero with a road and van, then card grids per tab. Drive-time bars drawn to scale on the Routes tab. */
+:root{
+  --bg:#F1F8F4; --surface:#FFFFFF; --surface2:#E2F0E8; --fg:#0C2A22; --muted:#46635A; --line:#C6DCD0;
+  --green:#0F7B4D; --on-green:#FFFFFF;
+  --sun:#FFC62B; --on-sun:#2A1F00;
+  --coral:#E5473A; --on-coral:#FFFFFF;
+  --sea:#0A8CA6; --on-sea:#FFFFFF;
+  --head:#FFFFFF;
+  --display:'Bricolage Grotesque','Trebuchet MS',system-ui,sans-serif;
+  --body:'DM Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --shadow:0 10px 30px -14px rgba(12,42,34,.35);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#07211B; --surface:#0E3027; --surface2:#123B30; --fg:#E7F5EE; --muted:#9CC0B1; --line:#1F4A3D;
+    --green:#2FBF7F; --on-green:#04241A;
+    --sun:#FFD04A; --on-sun:#2A1F00;
+    --coral:#FF7A6B; --on-coral:#2B0A06;
+    --sea:#3CC4DD; --on-sea:#032A33;
+    --head:#0A2A22; --shadow:0 10px 30px -14px rgba(0,0,0,.7);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#07211B; --surface:#0E3027; --surface2:#123B30; --fg:#E7F5EE; --muted:#9CC0B1; --line:#1F4A3D;
+  --green:#2FBF7F; --on-green:#04241A;
+  --sun:#FFD04A; --on-sun:#2A1F00;
+  --coral:#FF7A6B; --on-coral:#2B0A06;
+  --sea:#3CC4DD; --on-sea:#032A33;
+  --head:#0A2A22; --shadow:0 10px 30px -14px rgba(0,0,0,.7);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-text-size-adjust:100%}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--head);z-index:30}
+h1,h2,h3{font-family:var(--display);line-height:1.08;margin:0;text-wrap:balance;letter-spacing:-.01em}
+p{margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--sea);outline-offset:2px;border-radius:6px}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 
+/* header */
+.site-head{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--head);border-bottom:1px solid var(--line)}
+.head-row{display:flex;align-items:center;gap:16px;padding-block:10px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;flex:none}
+.brand svg{width:40px;height:40px;flex:none}
+.brand b{display:block;font-family:var(--display);font-weight:800;font-size:1.15rem;line-height:1}
+.brand small{display:block;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:3px}
+.tabs{display:flex;gap:4px;overflow-x:auto;flex:1;min-width:0;scrollbar-width:none;justify-content:flex-end}
+.tabs::-webkit-scrollbar{display:none}
+.tabs a{white-space:nowrap;text-decoration:none;font-weight:700;font-size:.92rem;padding:9px 14px;border-radius:999px;color:var(--muted)}
+.tabs a:hover{background:var(--surface2);color:var(--fg)}
+.tabs a[aria-current="page"]{background:var(--green);color:var(--on-green)}
+@media (max-width:760px){
+  .head-row{flex-wrap:wrap;gap:6px}
+  .tabs{flex-basis:100%;justify-content:flex-start;padding-bottom:6px}
+}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:700 .98rem var(--body);padding:13px 20px;border-radius:12px;border:2px solid transparent;text-decoration:none;cursor:pointer;line-height:1.2;text-align:center}
+.btn-green{background:var(--green);color:var(--on-green)}
+.btn-sun{background:var(--sun);color:var(--on-sun)}
+.btn-line{background:transparent;border-color:var(--fg);color:var(--fg)}
+.btn-sea{background:var(--sea);color:var(--on-sea)}
+.btn-coral{background:var(--coral);color:var(--on-coral)}
+.btn:hover{filter:brightness(1.07);transform:translateY(-1px)}
+.btn svg{width:18px;height:18px;flex:none}
+
+/* views */
+.view{padding-block:40px 80px}
+.eyebrow{font-weight:700;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--green)}
+.page-title{font-size:clamp(2rem,5vw,3.2rem);font-weight:800;margin-top:6px}
+.lede{color:var(--muted);max-width:60ch;margin-top:14px;font-size:1.06rem}
+.section{margin-top:56px}
+.section>h2{font-size:clamp(1.5rem,3.4vw,2.1rem);font-weight:800;margin-bottom:20px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(min(100%,290px),1fr))}
+
+/* hero */
+.hero{display:grid;gap:28px;grid-template-columns:1.05fr .95fr;align-items:center;padding-block:34px 8px}
+@media (max-width:860px){.hero{grid-template-columns:1fr}}
+.hero h1{font-size:clamp(2.5rem,7vw,4.6rem);font-weight:800}
+.hero h1 span{color:var(--green)}
+.hero .lede{font-size:1.15rem}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.hero-art{min-width:0}
+.hero-art svg{display:block;width:100%;height:auto;border-radius:24px}
+.f-sky{fill:var(--surface2)} .f-sun{fill:var(--sun)} .f-green{fill:var(--green)} .f-sea{fill:var(--sea)}
+.f-road{fill:var(--fg)} .f-surface{fill:var(--surface)} .f-coral{fill:var(--coral)} .f-fg{fill:var(--fg)}
+.s-line{stroke:var(--surface);stroke-width:5;stroke-dasharray:22 18;fill:none}
+@media (prefers-reduced-motion:no-preference){
+  .van{animation:bob 2.6s ease-in-out infinite}
+  .s-line{animation:dash 1.2s linear infinite}
+}
+@keyframes bob{50%{transform:translateY(-3px)}}
+@keyframes dash{to{stroke-dashoffset:-40}}
+
+/* quick contact strip */
+.strip{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));margin-top:34px}
+.chip{display:flex;align-items:center;gap:12px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px 16px;text-decoration:none;box-shadow:var(--shadow);min-width:0}
+.chip .ic{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;flex:none}
+.chip .ic svg{width:22px;height:22px}
+.chip span.l{display:block;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.chip span.v{display:block;font-weight:700;overflow-wrap:anywhere}
+.ic-wa{background:var(--green);color:var(--on-green)} .ic-call{background:var(--sun);color:var(--on-sun)} .ic-mail{background:var(--coral);color:var(--on-coral)}
+
+/* cards */
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px;min-width:0}
+.card h3{font-size:1.3rem;font-weight:800;margin-bottom:8px}
+.card p{color:var(--muted)}
+.badge{display:inline-grid;place-items:center;width:46px;height:46px;border-radius:14px;margin-bottom:14px}
+.badge svg{width:24px;height:24px}
+.b-green{background:var(--green);color:var(--on-green)} .b-sun{background:var(--sun);color:var(--on-sun)} .b-sea{background:var(--sea);color:var(--on-sea)} .b-coral{background:var(--coral);color:var(--on-coral)}
+.tour{padding:0;overflow:hidden;display:flex;flex-direction:column}
+.tour .top{padding:16px 22px;font-family:var(--display);font-weight:800;font-size:1.1rem}
+.tour .body{padding:18px 22px 22px;display:flex;flex-direction:column;gap:12px;flex:1}
+.tour .meta{display:flex;flex-wrap:wrap;gap:8px}
+.pill{font-size:.78rem;font-weight:700;padding:4px 10px;border-radius:999px;background:var(--surface2);color:var(--fg)}
+.tour .btn{margin-top:auto;align-self:flex-start;padding:10px 16px;font-size:.92rem}
+
+.steps{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr))}
+
+/* routes bars */
+.routes{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:22px}
+.rt{display:grid;grid-template-columns:minmax(96px,150px) 1fr 74px;gap:12px;align-items:center;padding-block:10px;border-bottom:1px dashed var(--line)}
+.rt:last-of-type{border-bottom:0}
+.rt .n{font-weight:700;min-width:0}
+.rt .n small{display:block;color:var(--muted);font-weight:400;font-size:.8rem}
+.bar{height:16px;background:var(--surface2);border-radius:99px;overflow:hidden}
+.bar i{display:block;height:100%;border-radius:99px}
+.rt .t{font-variant-numeric:tabular-nums;font-weight:700;text-align:right;font-size:.92rem}
+.note{color:var(--muted);font-size:.86rem;margin-top:12px}
+
+/* about */
+.split{display:grid;gap:28px;grid-template-columns:1.1fr .9fr;align-items:start}
+@media (max-width:860px){.split{grid-template-columns:1fr}}
+.quote-card{background:var(--green);color:var(--on-green);border-radius:22px;padding:28px}
+.quote-card h3{font-size:1.5rem;font-weight:800}
+.quote-card ul{margin:14px 0 0;padding-left:20px;display:grid;gap:8px}
+
+/* contact */
+.contact-grid{display:grid;gap:20px;grid-template-columns:.9fr 1.1fr;align-items:start}
+@media (max-width:900px){.contact-grid{grid-template-columns:1fr}}
+.stack{display:grid;gap:14px}
+.num{display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding:12px 0;border-bottom:1px dashed var(--line)}
+.num:last-child{border-bottom:0}
+.num .val{font-weight:700;font-size:1.06rem;flex:1 1 170px;min-width:0;overflow-wrap:anywhere;user-select:all}
+.mini{font:700 .84rem var(--body);padding:8px 12px;border-radius:10px;border:2px solid var(--line);background:transparent;color:var(--fg);cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:6px}
+.mini:hover{border-color:var(--fg)}
+.mini.go{background:var(--green);border-color:var(--green);color:var(--on-green)}
+.mini.call{background:var(--sun);border-color:var(--sun);color:var(--on-sun)}
+.mini.mail{background:var(--coral);border-color:var(--coral);color:var(--on-coral)}
+.card h3 .sub{display:block;font-family:var(--body);font-weight:500;font-size:.85rem;color:var(--muted);margin-top:2px}
+form{display:grid;gap:14px;grid-template-columns:1fr 1fr}
+form .full{grid-column:1/-1}
+@media (max-width:560px){form{grid-template-columns:1fr}}
+label{display:grid;gap:6px;font-weight:700;font-size:.88rem;min-width:0}
+input,select,textarea{font:400 1rem var(--body);color:var(--fg);background:var(--bg);border:2px solid var(--line);border-radius:12px;padding:11px 12px;width:100%;min-width:0}
+input:focus,select:focus,textarea:focus{border-color:var(--sea);outline:none}
+textarea{min-height:90px;resize:vertical}
+.copied{font-size:.8rem;font-weight:700;color:var(--green);min-height:1.2em}
+
+/* footer + float */
+footer{border-top:1px solid var(--line);padding-block:30px 110px;color:var(--muted);font-size:.92rem}
+.foot{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between;align-items:center}
+.float{position:fixed;right:calc(16px + env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:25;box-shadow:0 12px 28px -8px rgba(0,0,0,.45);border-radius:999px;padding:14px 20px}
+</style>
+
+<header class="site-head">
+  <div class="wrap head-row">
+    <a class="brand" href="#home" aria-label="Rapid Wheels home">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22" class="f-sun"/><circle cx="24" cy="24" r="15" class="f-fg"/><circle cx="24" cy="24" r="9" class="f-surface"/><circle cx="24" cy="24" r="3.5" class="f-green"/><path d="M24 9v7M24 32v7M9 24h7M32 24h7" style="stroke:var(--sun);stroke-width:3;stroke-linecap:round"/></svg>
+      <span><b>Rapid Wheels</b><small>Transport &amp; Tours</small></span>
+    </a>
+    <nav class="tabs" aria-label="Main">
+      <a href="#home" data-tab="home">Home</a>
+      <a href="#about" data-tab="about">About</a>
+      <a href="#services" data-tab="services">Services</a>
+      <a href="#tours" data-tab="tours">Tours</a>
+      <a href="#routes" data-tab="routes">Routes</a>
+      <a href="#contact" data-tab="contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<!-- HOME -->
+<section class="view" data-view="home">
+  <div class="wrap">
+    <div class="hero">
+      <div>
+        <div class="eyebrow">Montego Bay, Jamaica</div>
+        <h1>Ride easy. See <span>Jamaica</span> your way.</h1>
+        <p class="lede">Airport pickups, hotel transfers and private island tours from Montego Bay. Tell us where you are going and we handle the driving.</p>
+        <div class="cta-row">
+          <a class="btn btn-green" href="#contact">Get a quote</a>
+          <a class="btn btn-line" href="#tours">See our tours</a>
+        </div>
+      </div>
+      <div class="hero-art">
+        <svg viewBox="0 0 480 400" role="img" aria-label="A yellow van driving along a coastal road under the sun">
+          <rect width="480" height="400" class="f-sky"/>
+          <circle cx="360" cy="110" r="62" class="f-sun"/>
+          <path d="M0 250 Q80 170 170 235 T330 220 T480 240 V330 H0Z" class="f-green" style="opacity:.55"/>
+          <path d="M0 280 Q110 215 220 270 T480 265 V340 H0Z" class="f-green"/>
+          <path d="M0 322 Q60 306 120 322 T240 322 T360 322 T480 322 V345 H0Z" class="f-sea"/>
+          <rect y="338" width="480" height="62" class="f-road"/>
+          <path d="M0 372 H480" class="s-line"/>
+          <g class="van">
+            <g transform="translate(120 236)">
+              <rect x="0" y="22" width="230" height="68" rx="18" class="f-sun"/>
+              <rect x="20" y="36" width="44" height="26" rx="6" class="f-surface"/>
+              <rect x="72" y="36" width="44" height="26" rx="6" class="f-surface"/>
+              <rect x="124" y="36" width="44" height="26" rx="6" class="f-surface"/>
+              <path d="M178 36h26q14 0 20 18v8h-46z" class="f-surface"/>
+              <rect x="0" y="70" width="230" height="8" class="f-coral"/>
+              <circle cx="54" cy="94" r="22" class="f-fg"/><circle cx="54" cy="94" r="9" class="f-surface"/>
+              <circle cx="178" cy="94" r="22" class="f-fg"/><circle cx="178" cy="94" r="9" class="f-surface"/>
+            </g>
+          </g>
+        </svg>
+      </div>
+    </div>
+
+    <div class="strip">
+      <a class="chip" href="https://wa.me/18763813607" target="_blank" rel="noopener">
+        <span class="ic ic-wa"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.1-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.200zm4.500-6.100c-.2-.1-1.500-.7-1.700-.8-.2-.1-.4-.1-.6.100l-.8 1c-.1.200-.3.200-.5.100-1.500-.7-2.500-1.300-3.400-2.900-.3-.5.300-.5.800-1.500.1-.2 0-.3 0-.5l-.8-1.800c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.100-.7.300-.7.700-1 1.500-1 2.300 0 .8.400 1.700.9 2.400 1.100 1.600 2.600 2.800 4.500 3.500 1.300.5 1.800.4 2.400.3.700-.1 1.500-.6 1.700-1.200.2-.6.200-1.100.2-1.200-.1-.1-.2-.2-.4-.3z"/></svg></span>
+        <span><span class="l">WhatsApp</span><span class="v">+1 876-381-3607</span></span>
+      </a>
+      <a class="chip" href="#contact">
+        <span class="ic ic-call"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.600 10.800a15 15 0 0 0 6.600 6.600l2.200-2.200a1 1 0 0 1 1-.25 11.400 11.400 0 0 0 3.600.6 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.500a1 1 0 0 1 1 1c0 1.300.2 2.500.6 3.600a1 1 0 0 1-.25 1z"/></svg></span>
+        <span><span class="l">Call</span><span class="v">+1 876-502-5797</span></span>
+      </a>
+      <a class="chip" href="#contact">
+        <span class="ic ic-mail"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm9 7.200L4.600 7H19.400zM4 8.800v8.200h16V8.800l-8 5.500z"/></svg></span>
+        <span><span class="l">Email</span><span class="v">rapidwheelstransport01@gmail.com</span></span>
+      </a>
+    </div>
+
+    <div class="section">
+      <h2>What we do</h2>
+      <div class="grid">
+        <div class="card"><span class="badge b-green"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21 16v-2l-8-5V3.500a1.500 1.500 0 0 0-3 0V9l-8 5v2l8-2.500V19l-2 1.500V22l3.500-1 3.500 1v-1.500L13 19v-5.500z"/></svg></span><h3>Airport transfers</h3><p>Pickup and drop-off at Sangster International Airport (MBJ).</p></div>
+        <div class="card"><span class="badge b-sun"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 21V7l9-4 9 4v14h-6v-6H9v6zm6-10h2V9H9zm4 0h2V9h-2z"/></svg></span><h3>Hotel &amp; villa rides</h3><p>Door-to-door between your stay, the beach, restaurants and nightlife.</p></div>
+        <div class="card"><span class="badge b-sea"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3 6.500 7 .8-5.200 4.800 1.500 7L12 17.600 5.700 21.100l1.500-7L2 9.300l7-.8z"/></svg></span><h3>Private island tours</h3><p>Waterfalls, rafting, beaches and history, with your own driver.</p></div>
+      </div>
+      <div class="cta-row"><a class="btn btn-line" href="#services">All services</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="view" data-view="about" hidden>
+  <div class="wrap">
+    <div class="eyebrow">About us</div>
+    <h1 class="page-title">A Montego Bay team that knows the roads.</h1>
+    <p class="lede">Rapid Wheels Transport And Tours is based in Montego Bay on Jamaica's north-west coast. We drive visitors and locals to the airport, to their hotels and to the island's best-loved places.</p>
+    <div class="section split">
+      <div class="stack">
+        <div class="card"><h3>Why people book with us</h3><p>You deal directly with the people who drive. Message us on WhatsApp, tell us the plan, and get a clear answer on price and pickup time before you commit.</p></div>
+        <div class="card"><h3>Built around your plans</h3><p>Early flight, late dinner, extra stop at the beach? Tell us and we shape the day around you instead of the other way round.</p></div>
+      </div>
+      <div class="quote-card">
+        <h3>Our promise</h3>
+        <ul>
+          <li>On time, every time we agree a pickup</li>
+          <li>Safe, careful driving on every road</li>
+          <li>Friendly, helpful, local</li>
+          <li>Clear quote before you book</li>
+        </ul>
+      </div>
+    </div>
+    <div class="section">
+      <h2>How booking works</h2>
+      <div class="steps">
+        <div class="card"><span class="badge b-green">1</span><h3>Tell us the plan</h3><p>Send pickup, destination, date and group size.</p></div>
+        <div class="card"><span class="badge b-sun">2</span><h3>Get your quote</h3><p>We reply with the price and the vehicle for your group.</p></div>
+        <div class="card"><span class="badge b-sea">3</span><h3>Confirm</h3><p>Say yes and your ride is booked.</p></div>
+        <div class="card"><span class="badge b-coral">4</span><h3>Enjoy the ride</h3><p>Your driver meets you at the agreed place and time.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="view" data-view="services" hidden>
+  <div class="wrap">
+    <div class="eyebrow">Services</div>
+    <h1 class="page-title">Rides for every kind of trip.</h1>
+    <p class="lede">Share your group size when you ask for a quote and we match the vehicle to your party.</p>
+    <div class="section grid" style="margin-top:32px">
+      <div class="card"><span class="badge b-green"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21 16v-2l-8-5V3.500a1.500 1.500 0 0 0-3 0V9l-8 5v2l8-2.500V19l-2 1.500V22l3.500-1 3.500 1v-1.500L13 19v-5.500z"/></svg></span><h3>Airport transfers</h3><p>Sangster International Airport (MBJ) to hotels, villas and resorts in Montego Bay, Negril, Falmouth, Ocho Rios and beyond. Share your flight details so we plan around your landing time.</p></div>
+      <div class="card"><span class="badge b-sun"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 21V7l9-4 9 4v14h-6v-6H9v6z"/></svg></span><h3>Hotel &amp; resort transfers</h3><p>Rides between your accommodation and the places you want to go, one way or return.</p></div>
+      <div class="card"><span class="badge b-sea"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3 6.500 7 .8-5.200 4.800 1.500 7L12 17.600 5.700 21.100l1.500-7L2 9.300l7-.8z"/></svg></span><h3>Private island tours</h3><p>Full-day and half-day trips with a driver who stays with you. Pick a tour from our list or build your own route.</p></div>
+      <div class="card"><span class="badge b-coral"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M2 17h2l1-5h14l1 5h2v2H2zM6 8l1-4h10l1 4zM3 20h18v2H3z"/></svg></span><h3>Cruise port transfers</h3><p>Pickups from the Montego Bay and Falmouth cruise ports for a day on shore, with a return in time for boarding.</p></div>
+      <div class="card"><span class="badge b-green"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 11a3 3 0 1 0-3-3 3 3 0 0 0 3 3zM8 11a3 3 0 1 0-3-3 3 3 0 0 0 3 3zm0 2c-2.300 0-7 1.200-7 3.500V19h14v-2.500C15 14.200 10.300 13 8 13zm8 0c-.3 0-.6 0-1 .1 1.200.9 2 2 2 3.400V19h6v-2.500c0-2.300-4.700-3.500-7-3.500z"/></svg></span><h3>Groups &amp; events</h3><p>Weddings, church outings, school trips, reunions and company travel. Larger groups are welcome.</p></div>
+      <div class="card"><span class="badge b-sun"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm.5 5v5.300l4.200 2.500-.8 1.300L11 13V7z"/></svg></span><h3>Day hire</h3><p>Keep a driver for the day for shopping, meetings, errands or a long lunch. You set the stops.</p></div>
+    </div>
+    <div class="cta-row"><a class="btn btn-green" href="#contact">Ask for a quote</a></div>
+  </div>
+</section>
+
+<!-- TOURS -->
+<section class="view" data-view="tours" hidden>
+  <div class="wrap">
+    <div class="eyebrow">Island tours</div>
+    <h1 class="page-title">Pick a day out. Or mix your own.</h1>
+    <p class="lede">All tours are private and start at your hotel or villa. Entry fees and meals are separate unless we agree otherwise. Message us for a price.</p>
+    <div class="section grid" style="margin-top:32px">
+      <article class="card tour"><div class="top b-sea">Dunn's River Falls</div><div class="body"><p>Climb the famous terraced waterfall in Ocho Rios, then browse the craft markets nearby.</p><div class="meta"><span class="pill">Ocho Rios</span><span class="pill">Full day</span></div><a class="btn btn-sea" href="#contact" data-tour="Dunn's River Falls">Ask about this tour</a></div></article>
+      <article class="card tour"><div class="top b-green">Martha Brae River Rafting</div><div class="body"><p>Drift down the Martha Brae on a bamboo raft with a skilled raft captain.</p><div class="meta"><span class="pill">Falmouth</span><span class="pill">Half day</span></div><a class="btn btn-green" href="#contact" data-tour="Martha Brae River Rafting">Ask about this tour</a></div></article>
+      <article class="card tour"><div class="top b-sun">Rose Hall Great House</div><div class="body"><p>Tour the restored plantation house, hear its stories and enjoy views down to the sea.</p><div class="meta"><span class="pill">Montego Bay</span><span class="pill">Half day</span></div><a class="btn btn-sun" href="#contact" data-tour="Rose Hall Great House">Ask about this tour</a></div></article>
+      <article class="card tour"><div class="top b-coral">Negril &amp; Seven Mile Beach</div><div class="body"><p>Long white sand, clear water and a sunset on the West End cliffs.</p><div class="meta"><span class="pill">Negril</span><span class="pill">Full day</span></div><a class="btn btn-coral" href="#contact" data-tour="Negril and Seven Mile Beach">Ask about this tour</a></div></article>
+      <article class="card tour"><div class="top b-sea">Luminous Lagoon</div><div class="body"><p>A night boat ride in Falmouth where the water glows when it is stirred.</p><div class="meta"><span class="pill">Falmouth</span><span class="pill">Evening</span></div><a class="btn btn-sea" href="#contact" data-tour="Luminous Lagoon">Ask about this tour</a></div></article>
+      <article class="card tour"><div class="top b-green">YS Falls &amp; South Coast</div><div class="body"><p>Swim in tiered waterfalls in St. Elizabeth and cool off under the trees.</p><div class="meta"><span class="pill">St. Elizabeth</span><span class="pill">Full day</span></div><a class="btn btn-green" href="#contact" data-tour="YS Falls and South Coast">Ask about this tour</a></div></article>
+    </div>
+    <div class="card" style="margin-top:22px"><h3>Want something different?</h3><p>Tell us what you love, such as beaches, food, history or music, and we will plan a custom route.</p><div class="cta-row"><a class="btn btn-sun" href="#contact">Plan a custom tour</a></div></div>
+  </div>
+</section>
+
+<!-- ROUTES -->
+<section class="view" data-view="routes" hidden>
+  <div class="wrap">
+    <div class="eyebrow">Routes</div>
+    <h1 class="page-title">How far is it from Montego Bay?</h1>
+    <p class="lede">Typical drive times from the Montego Bay area. Bars are drawn to scale against three hours.</p>
+    <div class="section routes" style="margin-top:32px" id="routesBox">
+      <div class="rt"><div class="n">Rose Hall<small>Great House</small></div><div class="bar"><i style="width:11.1%;background:var(--sun)"></i></div><div class="t">~20 min</div></div>
+      <div class="rt"><div class="n">Falmouth<small>Rafting, lagoon, cruise port</small></div><div class="bar"><i style="width:22.2%;background:var(--green)"></i></div><div class="t">~40 min</div></div>
+      <div class="rt"><div class="n">Negril<small>Seven Mile Beach</small></div><div class="bar"><i style="width:44.4%;background:var(--coral)"></i></div><div class="t">~1 hr 20</div></div>
+      <div class="rt"><div class="n">Ocho Rios<small>Dunn's River Falls</small></div><div class="bar"><i style="width:58.3%;background:var(--sea)"></i></div><div class="t">~1 hr 45</div></div>
+      <div class="rt"><div class="n">YS Falls<small>St. Elizabeth</small></div><div class="bar"><i style="width:75%;background:var(--green)"></i></div><div class="t">~2 hr 15</div></div>
+      <div class="rt"><div class="n">Kingston<small>Capital city</small></div><div class="bar"><i style="width:100%;background:var(--sun)"></i></div><div class="t">~3 hr</div></div>
+      <p class="note">Times are approximate and change with traffic, weather and road works. We will give you a realistic plan when you book.</p>
+    </div>
+    <div class="cta-row"><a class="btn btn-green" href="#contact">Book a transfer</a></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="view" data-view="contact" hidden>
+  <div class="wrap">
+    <div class="eyebrow">Contact &amp; booking</div>
+    <h1 class="page-title">Let's plan your ride.</h1>
+    <p class="lede">Reach us any way you like, or fill in the form and send it straight to WhatsApp or email.</p>
+    <div class="section contact-grid" style="margin-top:32px">
+      <div class="stack">
+        <div class="card">
+          <h3>WhatsApp <span class="sub">Fastest way to book</span></h3>
+          <div class="num"><span class="val">+1 876-381-3607</span><a class="mini go" href="https://wa.me/18763813607" target="_blank" rel="noopener">Chat</a><button class="mini" type="button" data-copy="+1 876-381-3607">Copy</button></div>
+          <div class="num"><span class="val">+1 876-316-6197</span><a class="mini go" href="https://wa.me/18763166197" target="_blank" rel="noopener">Chat</a><button class="mini" type="button" data-copy="+1 876-316-6197">Copy</button></div>
+        </div>
+        <div class="card">
+          <h3>Call us</h3>
+          <div class="num"><span class="val">+1 876-502-5797</span><a class="mini call" href="tel:+18765025797">Call</a><button class="mini" type="button" data-copy="+1 876-502-5797">Copy</button></div>
+        </div>
+        <div class="card">
+          <h3>Email</h3>
+          <div class="num"><span class="val">rapidwheelstransport01@gmail.com</span><a class="mini mail" href="mailto:rapidwheelstransport01@gmail.com">Email</a><button class="mini" type="button" data-copy="rapidwheelstransport01@gmail.com">Copy</button></div>
+        </div>
+        <div class="copied" id="copied" role="status" aria-live="polite"></div>
+      </div>
+
+      <div class="card">
+        <h3>Request a quote <span class="sub">Fill in what you know. Then choose WhatsApp or email.</span></h3>
+        <form id="quote" autocomplete="on">
+          <label>Your name<input id="qName" type="text" placeholder="Your name"></label>
+          <label>Date<input id="qDate" type="date"></label>
+          <label>Service
+            <select id="qService">
+              <option>Airport transfer</option>
+              <option>Hotel or villa transfer</option>
+              <option>Island tour</option>
+              <option>Cruise port transfer</option>
+              <option>Group or event</option>
+              <option>Day hire</option>
+            </select>
+          </label>
+          <label>People<input id="qPeople" type="number" min="1" max="60" value="2"></label>
+          <label class="full">Pickup place<input id="qFrom" type="text" placeholder="e.g. Sangster Airport or your hotel"></label>
+          <label class="full">Going to<input id="qTo" type="text" placeholder="e.g. Negril, Ocho Rios, Rose Hall"></label>
+          <label class="full">Notes<textarea id="qNotes" placeholder="Flight number, time, luggage, anything else"></textarea></label>
+          <label class="full">Send WhatsApp to
+            <select id="qWa">
+              <option value="18763813607">+1 876-381-3607</option>
+              <option value="18763166197">+1 876-316-6197</option>
+            </select>
+          </label>
+          <div class="full cta-row" style="margin-top:0">
+            <a class="btn btn-green" id="sendWa" href="https://wa.me/18763813607" target="_blank" rel="noopener">Send on WhatsApp</a>
+            <a class="btn btn-line" id="sendMail" href="mailto:rapidwheelstransport01@gmail.com">Send by email</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div><b style="color:var(--fg)">Rapid Wheels Transport And Tours</b><br>Montego Bay, Jamaica</div>
+    <div>WhatsApp +1 876-381-3607 · +1 876-316-6197<br>Call +1 876-502-5797</div>
+  </div>
+</footer>
+
+<a class="btn btn-green float" href="https://wa.me/18763813607" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.600 15L2 22l5.100-1.300A10 10 0 1 0 12 2zm0 18.200c-1.500 0-3-.4-4.200-1.200l-.3-.2-3 .8.8-2.900-.2-.3A8.200 8.200 0 1 1 12 20.200z"/></svg>
+  WhatsApp us
+</a>
+
+<script>
+(function(){
+  var views=['home','about','services','tours','routes','contact'];
+  var els=document.querySelectorAll('[data-view]');
+  var tabs=document.querySelectorAll('[data-tab]');
+  function show(){
+    var h=(location.hash||'').slice(1);
+    if(views.indexOf(h)<0)h='home';
+    els.forEach(function(e){e.hidden=e.getAttribute('data-view')!==h});
+    tabs.forEach(function(t){
+      if(t.getAttribute('data-tab')===h)t.setAttribute('aria-current','page');
+      else t.removeAttribute('aria-current');
+    });
+    document.title=h==='home'?'Rapid Wheels Transport And Tours':'Rapid Wheels Transport And Tours';
+    window.scrollTo(0,0);
+    var act=document.querySelector('.tabs [aria-current]');
+    if(act&&act.scrollIntoView){try{act.scrollIntoView({inline:'center',block:'nearest'})}catch(e){}}
+  }
+  window.addEventListener('hashchange',show);
+  show();
+
+  // copy buttons
+  var note=document.getElementById('copied');
+  function say(msg){note.textContent=msg;setTimeout(function(){note.textContent=''},2200)}
+  document.querySelectorAll('[data-copy]').forEach(function(b){
+    b.addEventListener('click',function(){
+      var txt=b.getAttribute('data-copy');
+      var fallback=function(){
+        var v=b.parentNode.querySelector('.val');
+        if(v){var r=document.createRange();r.selectNodeContents(v);var s=window.getSelection();s.removeAllRanges();s.addRange(r)}
+        say('Selected. Press copy on your device.');
+      };
+      try{
+        navigator.clipboard.writeText(txt).then(function(){say('Copied '+txt)},fallback);
+      }catch(e){fallback()}
+    });
+  });
+
+  // quote builder
+  var f={n:qName,d:qDate,s:qService,p:qPeople,a:qFrom,b:qTo,x:qNotes,w:qWa};
+  function build(){
+    var lines=['Hello Rapid Wheels! I would like a quote.',
+      'Service: '+f.s.value,
+      'People: '+(f.p.value||'-'),
+      'Date: '+(f.d.value||'-'),
+      'Pickup: '+(f.a.value||'-'),
+      'Going to: '+(f.b.value||'-')];
+    if(f.n.value)lines.unshift('Name: '+f.n.value);
+    if(f.x.value)lines.push('Notes: '+f.x.value);
+    var msg=lines.join('\n');
+    sendWa.href='https://wa.me/'+f.w.value+'?text='+encodeURIComponent(msg);
+    sendMail.href='mailto:rapidwheelstransport01@gmail.com?subject='+encodeURIComponent('Quote request: '+f.s.value)+'&body='+encodeURIComponent(msg);
+  }
+  document.getElementById('quote').addEventListener('input',build);
+  document.getElementById('quote').addEventListener('submit',function(e){e.preventDefault()});
+  build();
+
+  // tour buttons prefill the form
+  document.querySelectorAll('[data-tour]').forEach(function(a){
+    a.addEventListener('click',function(){
+      f.s.value='Island tour';
+      f.b.value=a.getAttribute('data-tour');
+      build();
+    });
+  });
+})();
+</script>
+
+</body></html>
