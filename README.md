@@ -52,7 +52,7 @@ Book your ride or tour today and experience Montego Bay the Rapid Wheels way!
   **_LETS START PLANNING_**
 
                                    
-**_Email Us_**: rapidwheelstransport01@gmail.com
+**_Email Us_**:rapidwheelstransport01@gmail.com
 
 **_Whatsapp_** : 1876-381-3607 or 1876-316-6197
 
